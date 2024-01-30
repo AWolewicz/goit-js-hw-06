@@ -7,9 +7,13 @@ const ingredients = [
   'Condiments',
 ];
 
-Napisz skrypt, który dla każdego elementu tablicy ingredients:
+const listIngredients = document.querySelector('#ingredients');
 
-Utworzy oddzielny element <li>. Obowiązkowo użyj metody document.createElement().
-Doda nazwę elementu (string z tablicy) jako jego zawartość tekstową.
-Doda do elementu klasę item.
-Następnie jedna operacja umieści wszystkie <li> na liście ul#ingredients.
+const arrayIngredients = ingredients.map(ingredient => {
+  const element = document.createElement('li');
+  element.textContent = ingredient;
+  element.classList.add('item');
+  return element;
+});
+
+listIngredients.append(...arrayIngredients);

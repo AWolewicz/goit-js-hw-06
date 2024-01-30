@@ -1,16 +1,11 @@
-Napisz skrypt, który:
+const listWithId = document.querySelector('#categories');
 
-Policzy i wypisze w konsoli liczbę kategorii w ul#categories, czyli elementy li.item.
-Dla każdego elementu li.item na liście ul#categories, znajdzie i wypisze w konsoli tekst nagłówka elementu (tag <h2>) i liczbę elementów w danej kategorii (wszystkich w jej obrębie <li>).
-Po wykonaniu w konsoli znajdą się takie komunikaty.
+const listItemsByClassName = document.querySelectorAll('li.item');
 
-Number of categories: 3
+console.log("Number of categories: " + listItemsByClassName.length);
 
-Category: Animals
-Elements: 4
-
-Category: Products
-Elements: 3
-
-Category: Technologies
-Elements: 5
+listItemsByClassName.forEach(element => {
+    console.log("Category: " + element.querySelector("h2").textContent)
+    const subelems = element.querySelectorAll('li')
+    console.log("Elements: " + subelems.length)
+});
