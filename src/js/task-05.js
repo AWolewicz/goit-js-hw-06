@@ -1,4 +1,10 @@
-Napisz skrypt, który przy wpisywaniu tekstu w polu input input#name-input (zdarzenie input) wstawia jego aktualną wartość do span#name-output. Jeśli pole input jest puste, w spanie powinien wyświetlić się tekst "Anonymous".
+const input = document.querySelector("#name-input");
+const output = document.querySelector("#name-output");
 
-<input type="text" id="name-input" placeholder="Please enter your name" />
-<h1>Hello, <span id="name-output">Anonymous</span>!</h1>
+input.addEventListener("input", () => {
+    if (input.value.trim() === "") {
+        output.textContent = "Anonymous";
+    } else {
+        output.textContent = input.value.trim();
+    }
+});

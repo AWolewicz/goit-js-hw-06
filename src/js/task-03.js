@@ -13,7 +13,15 @@ const images = [
   },
 ];
 
-Użyj tablicy obiektów images w celu utworzenia elementów <img> umieszczonych w <li>. Aby utworzyć znacznik użyj template strings i metody insertAdjacentHTML().
+const gallery = document.querySelector('.gallery');
 
-Wszystkie elementy galerii powinny być dodawane do DOM podczas jednej operacji.
-Ulepsz galerię używając flexboxów lub gridów poprzez klasy CSS.
+const list = images
+  .map((image) => `<li class="image" src="${image.url}" alt="${image.alt}"></li>`)
+  .join("");
+
+gallery.insertAdjacentHTML('beforeend', list);
+
+
+
+// Dlaczego nie pojawiają się obrazki?
+// Jak zrobić tego Cssa? Gdzie?
