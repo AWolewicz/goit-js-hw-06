@@ -1,27 +1,36 @@
-const images = [
-  {
-    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'White and Black Long Fur Cat',
-  },
-  {
-    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
-  },
-  {
-    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Group of Horses Running',
-  },
-];
+// const images = [
+//   {
+//     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'White and Black Long Fur Cat',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'Group of Horses Running',
+//   },
+// ];
 
-const gallery = document.querySelector('.gallery');
+// const gallery = document.querySelector('.gallery');
 
-const list = images
-  .map((image) => `<li class="image" src="${image.url}" alt="${image.alt}"></li>`)
-  .join("");
+// const list = images
+//   .map((image) => `<li class="image" src="${image.url}" alt="${image.alt}"></li>`);
 
-gallery.insertAdjacentHTML('beforeend', list);
-
+// gallery.insertAdjacentHTML('beforeend', list.join(''));
 
 
-// Dlaczego nie pojawiają się obrazki?
-// Jak zrobić tego Cssa? Gdzie?
+
+// // Dlaczego nie pojawiają się obrazki?
+// // Jak zrobić tego Cssa? Gdzie?
+
+
+const ulGalleryHtml = document.querySelector(".gallery");
+
+const galleryHtml = images
+  .map((image) => `<li class="gallery-item">
+    <img src="${image.url}" alt="${image.alt}" class="gallery-img">
+  </li>`);
+
+ulGalleryHtml.insertAdjacentHTML("beforeend", galleryHtml.join(''));

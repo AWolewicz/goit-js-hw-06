@@ -4,12 +4,11 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-Napisz skrypt, który zmienia kolor tła elementu <body> (poprzez style inline) po kliknięciu na button.change-color i wyświetla wartość koloru w span.color.
+const changeBtn = document.querySelector('.change-color');
+const colorValue = document.querySelector('.color');
 
-<div class="widget">
-  <p>Background color: <span class="color">-</span></p>
-  <button type="button" class="change-color">Change color</button>
-</div>
-
-
-Aby wygenerować losowy kolor użyj funkcji getRandomHexColor.
+changeBtn.addEventListener('click', () => {
+  const randomColor = getRandomHexColor();
+  document.body.style.backgroundColor = randomColor;
+  colorValue.textContent = randomColor;
+});
